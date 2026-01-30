@@ -132,7 +132,7 @@ sealed class PortfolioData {
     Project(
       title: 'Planty',
       description:
-          'Created this application to detect diseases in plants, You can Upload any pic from Gallery or you can directly capture any picture with the phone camera',
+          'Detect plant diseases by uploading an image or capturing one with your phone camera.',
       tags: <String>['Flutter', 'GetX State Management', 'TensorFlow Lite'],
       link: 'https://github.com/haris-afaq/Planty',
     ),
@@ -167,14 +167,14 @@ sealed class PortfolioData {
      Project(
       title: 'Bloc State Management',
       description:
-          'A Flutter project to practice Bloc and reactive state management, exploring patterns, events, states, and dynamic UI updates.',
+          'A Flutter project to practice Bloc and reactive state management with events, states, and UI updates.',
       tags: <String>['Flutter', 'Bloc State Management', 'Clean Coding'],
       link: 'https://github.com/haris-afaq/Bloc_State_Management_Practice',
     ),
      Project(
       title: 'Flutter_Clean_Architecture',
       description:
-          'A Flutter template implementing Clean Architecture with BLoC, providing a scalable, maintainable, and testable project structure.',
+          'A Flutter template using BLoC and Clean Architecture for scalable, maintainable, and testable apps.',
       tags: <String>['Flutter', 'Bloc State Management', 'Clean Coding', 'Bloc Patterns'],
       link: 'https://github.com/haris-afaq/Flutter_Clean_Architecture',
     ),

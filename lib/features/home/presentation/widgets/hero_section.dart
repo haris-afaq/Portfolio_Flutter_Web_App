@@ -21,45 +21,84 @@ class HeroSection extends StatelessWidget {
       builder: (context, constraints) {
         final size = Responsive.deviceSizeForWidth(constraints.maxWidth);
         final padding = Responsive.pagePaddingForWidth(constraints.maxWidth);
-
         return Container(
-          key: sectionKey,
-          padding: padding.add(
-            const EdgeInsets.symmetric(vertical: AppSpacing.sectionGap),
-          ),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                theme.colorScheme.surface,
-                theme.colorScheme.surfaceContainerLowest,
-              ],
+  key: sectionKey,
+  padding: padding.add(
+    const EdgeInsets.symmetric(vertical: AppSpacing.md), 
+  ),
+  decoration: BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        theme.colorScheme.surface,
+        theme.colorScheme.surfaceContainerLowest,
+      ],
+    ),
+  ),
+  child: MaxWidth(
+    child: ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: size == DeviceSize.desktop ? 400 : 300, 
+      ),
+      child: TweenAnimationBuilder<double>(
+        tween: Tween<double>(begin: 0, end: 1),
+        duration: AppDurations.slow,
+        curve: AppCurves.emphasized,
+        builder: (context, t, child) {
+          return Opacity(
+            opacity: t,
+            child: Transform.translate(
+              offset: Offset(0, (1 - t) * 10),
+              child: child,
             ),
-          ),
-          child: MaxWidth(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: size == DeviceSize.desktop ? 520 : 420,
-              ),
-              child: TweenAnimationBuilder<double>(
-                tween: Tween<double>(begin: 0, end: 1),
-                duration: AppDurations.slow,
-                curve: AppCurves.emphasized,
-                builder: (context, t, child) {
-                  return Opacity(
-                    opacity: t,
-                    child: Transform.translate(
-                      offset: Offset(0, (1 - t) * 10),
-                      child: child,
-                    ),
-                  );
-                },
-                child: _HeroContent(size: size),
-              ),
-            ),
-          ),
-        );
+          );
+        },
+        child: _HeroContent(size: size),
+      ),
+    ),
+  ),
+);
+
+
+        // return Container(
+        //   key: sectionKey,
+        //   padding: padding.add(
+        //     const EdgeInsets.symmetric(vertical: AppSpacing.sectionGap),
+        //   ),
+        //   decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //       begin: Alignment.topLeft,
+        //       end: Alignment.bottomRight,
+        //       colors: [
+        //         theme.colorScheme.surface,
+        //         theme.colorScheme.surfaceContainerLowest,
+        //       ],
+        //     ),
+        //   ),
+        //   child: MaxWidth(
+        //     child: ConstrainedBox(
+        //       constraints: BoxConstraints(
+        //         minHeight: size == DeviceSize.desktop ? 520 : 420,
+        //       ),
+        //       child: TweenAnimationBuilder<double>(
+        //         tween: Tween<double>(begin: 0, end: 1),
+        //         duration: AppDurations.slow,
+        //         curve: AppCurves.emphasized,
+        //         builder: (context, t, child) {
+        //           return Opacity(
+        //             opacity: t,
+        //             child: Transform.translate(
+        //               offset: Offset(0, (1 - t) * 10),
+        //               child: child,
+        //             ),
+        //           );
+        //         },
+        //         child: _HeroContent(size: size),
+        //       ),
+        //     ),
+        //   ),
+        // );
       },
     );
   }
