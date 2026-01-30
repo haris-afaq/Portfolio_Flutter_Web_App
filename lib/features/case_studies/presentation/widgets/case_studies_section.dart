@@ -26,6 +26,22 @@ class CaseStudiesSection extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           final size = Responsive.deviceSizeForWidth(constraints.maxWidth);
+
+          if (size == DeviceSize.mobile) {
+            return Column(
+              children: [
+                for (final cs in items)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpacing.lg),
+                    child: HoverCard(
+                      onTap: () => ExternalLinks.openUrl(cs.link),
+                      child: _caseStudyCard(context, cs, isGrid: false),
+                    ),
+                  ),
+              ],
+            );
+          }
+
           final columns = size == DeviceSize.desktop ? 2 : 1;
 
           return GridView.builder(
@@ -36,18 +52,84 @@ class CaseStudiesSection extends StatelessWidget {
               crossAxisCount: columns,
               crossAxisSpacing: AppSpacing.lg,
               mainAxisSpacing: AppSpacing.lg,
-              childAspectRatio: columns == 1 ? 1.2 : 1.35,
             ),
             itemBuilder: (context, index) {
               final cs = items[index];
               return HoverCard(
                 onTap: () => ExternalLinks.openUrl(cs.link),
-                child: _CaseStudyCard(caseStudy: cs),
+                child: _caseStudyCard(context, cs, isGrid: true),
               );
             },
           );
         },
       ),
+    );
+  }
+
+  Widget _caseStudyCard(
+    BuildContext context,
+    CaseStudy cs, {
+    required bool isGrid,
+  }) {
+    final theme = Theme.of(context);
+
+    return Padding(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(cs.title, style: theme.textTheme.titleLarge),
+          const SizedBox(height: AppSpacing.md),
+
+          _labelValue(context, 'Problem', cs.problem),
+          const SizedBox(height: AppSpacing.sm),
+
+          _labelValue(context, 'Solution', cs.solution),
+          const SizedBox(height: AppSpacing.sm),
+
+          _labelValue(context, 'Outcome', cs.outcome),
+
+          if (isGrid) const Spacer(), 
+
+          const SizedBox(height: AppSpacing.md),
+
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'View case',
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.xs),
+              Icon(
+                Icons.arrow_outward_rounded,
+                size: 18,
+                color: theme.colorScheme.primary,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _labelValue(BuildContext context, String label, String value) {
+    final theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: theme.textTheme.labelLarge),
+        const SizedBox(height: 6),
+        Text(
+          value,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -60,33 +142,49 @@ class _CaseStudyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(caseStudy.title, style: theme.textTheme.titleLarge),
-        const SizedBox(height: AppSpacing.md),
-        _LabelValue(label: 'Problem', value: caseStudy.problem),
-        const SizedBox(height: AppSpacing.sm),
-        _LabelValue(label: 'Solution', value: caseStudy.solution),
-        const SizedBox(height: AppSpacing.sm),
-        _LabelValue(label: 'Outcome', value: caseStudy.outcome),
-        // const Spacer(),
-        Row(
-          children: [
-            Text('View case', style: theme.textTheme.labelLarge),
-            const SizedBox(width: AppSpacing.xs),
-            Icon(
-              Icons.arrow_outward_rounded,
-              size: 18,
-              color: theme.colorScheme.primary,
-            ),
-          ],
-        ),
-      ],
+
+    return Padding(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            caseStudy.title,
+            style: theme.textTheme.titleLarge,
+          ),
+          const SizedBox(height: AppSpacing.md),
+
+          _LabelValue(label: 'Problem', value: caseStudy.problem),
+          const SizedBox(height: AppSpacing.sm),
+
+          _LabelValue(label: 'Solution', value: caseStudy.solution),
+          const SizedBox(height: AppSpacing.sm),
+
+          _LabelValue(label: 'Outcome', value: caseStudy.outcome),
+          const SizedBox(height: AppSpacing.md),
+
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'View case',
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.xs),
+              Icon(
+                Icons.arrow_outward_rounded,
+                size: 18,
+                color: theme.colorScheme.primary,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
-
 class _LabelValue extends StatelessWidget {
   const _LabelValue({required this.label, required this.value});
 
@@ -96,6 +194,7 @@ class _LabelValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
