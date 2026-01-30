@@ -19,7 +19,7 @@ class CaseStudiesSection extends StatelessWidget {
 
     return SectionShell(
       sectionKey: sectionKey,
-      title: 'UI/UX Case Studies',
+      title: 'Designing Projects',
       subtitle:
           'Short, outcome-focused snapshots of product thinking and design execution.',
       background: theme.colorScheme.surfaceContainerLowest,
@@ -97,7 +97,7 @@ class CaseStudiesSection extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'View case',
+                'Design Link',
                 style: theme.textTheme.labelLarge?.copyWith(
                   color: theme.colorScheme.primary,
                 ),

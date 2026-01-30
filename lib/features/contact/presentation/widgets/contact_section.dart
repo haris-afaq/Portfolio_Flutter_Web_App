@@ -107,9 +107,9 @@ class _ContactCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           _RowLink(
-            icon: Icons.brush_rounded,
-            label: 'Dribbble',
-            onTap: () => ExternalLinks.openUrl(profile.dribbble),
+            icon: Icons.call,
+            label: 'Whatsapp',
+            onTap: () => ExternalLinks.openUrl(profile.whatsapp),
           ),
           const SizedBox(height: AppSpacing.lg),
           Divider(color: theme.colorScheme.outlineVariant),

@@ -155,9 +155,9 @@ class _HeroContent extends StatelessWidget {
                 icon: Icons.work_rounded,
               ),
               _LinkChip(
-                label: 'Dribbble',
-                url: profile.dribbble,
-                icon: Icons.brush_rounded,
+                label: 'Whatsapp',
+                url: profile.whatsapp,
+                icon: Icons.call,
               ),
             ],
           ),

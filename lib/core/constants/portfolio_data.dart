@@ -10,7 +10,7 @@ class PortfolioProfile {
     required this.email,
     required this.linkedin,
     required this.github,
-    required this.dribbble,
+    required this.whatsapp,
   });
 
   final String name;
@@ -20,7 +20,7 @@ class PortfolioProfile {
   final String email;
   final String linkedin;
   final String github;
-  final String dribbble;
+  final String whatsapp;
 }
 
 @immutable
@@ -31,7 +31,7 @@ class Skill {
   final SkillLevel level;
 }
 
-enum SkillLevel { core, strong, familiar }
+enum SkillLevel { flutter, UIUX_Designing, Others }
 
 @immutable
 class Project {
@@ -88,86 +88,158 @@ sealed class PortfolioData {
     summary:
         'I design and build polished Flutter experiences—fast, accessible, and aligned to product goals. '
         'I blend engineering discipline with UI/UX craft to ship interfaces that feel effortless.',
-    email: 'you@example.com',
-    linkedin: 'https://www.linkedin.com/in/your-handle',
-    github: 'https://github.com/your-handle',
-    dribbble: 'https://dribbble.com/your-handle',
+    email: 'harisafaq22@gamil.com',
+    linkedin: 'https://www.linkedin.com/in/haris-afaq-044570306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    github: 'https://github.com/haris-afaq?tab=repositories',
+    whatsapp: 'https://wa.me/923144763488',
   );
 
   static const skills = <Skill>[
-    Skill(name: 'Flutter', level: SkillLevel.core),
-    Skill(name: 'Dart', level: SkillLevel.core),
-    Skill(name: 'Material 3', level: SkillLevel.strong),
-    Skill(name: 'Responsive UI', level: SkillLevel.core),
-    Skill(name: 'Animations', level: SkillLevel.strong),
-    Skill(name: 'Design Systems', level: SkillLevel.core),
-    Skill(name: 'Figma', level: SkillLevel.core),
-    Skill(name: 'UX Research', level: SkillLevel.strong),
-    Skill(name: 'Accessibility', level: SkillLevel.strong),
-    Skill(name: 'CI/CD', level: SkillLevel.familiar),
+    Skill(name: 'Flutter', level: SkillLevel.flutter),
+    Skill(name: 'Dart Programming', level: SkillLevel.flutter),
+    Skill(name: 'Firebase & APIs Intergration', level: SkillLevel.flutter),
+    Skill(name: 'Figma + Adobe XD', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Bloc State Management', level: SkillLevel.flutter),
+    Skill(name: 'Clean Coding', level: SkillLevel.flutter),
+    Skill(name: 'UX Research', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Prototyping', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Wireframming', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'User Research', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Mockups', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Adobe Illustrator', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Adobe Photoshop', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Adobe InDesign', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'Canva', level: SkillLevel.UIUX_Designing),
+    Skill(name: 'FlutterFlow', level: SkillLevel.Others),
+    Skill(name: 'Adobe Premier Pro', level: SkillLevel.Others),
   ];
 
   static const projects = <Project>[
     Project(
-      title: 'Fintech Dashboard',
+      title: 'Learnify',
       description:
-          'A production-grade analytics dashboard with advanced filtering, responsive data tables, and offline-friendly caching.',
-      tags: <String>['Flutter Web', 'Material 3', 'Architecture'],
-      link: 'https://github.com/your-handle/fintech-dashboard',
+          'Learnify is a scalable learning app with clean architecture and a responsive, engaging UI.',
+      tags: <String>['Flutter', 'Firebase', 'Youtube API', 'Bloc', 'Clean Coding'],
+      link: 'https://github.com/haris-afaq/Learnify_App',
     ),
     Project(
-      title: 'Healthcare Booking App',
+      title: 'Ecommerce-App',
       description:
-          'End-to-end appointment flow with thoughtful UX, strong validation, and clean state boundaries for maintainability.',
-      tags: <String>['Flutter', 'UX', 'Forms'],
-      link: 'https://github.com/your-handle/health-booking',
+          'An ecommerce platform with clean code, responsive UI, and intuitive, user-focused design.',
+      tags: <String>['Flutter', 'Firebase', 'Cloudinary', 'GetX', 'Clean Coding'],
+      link: 'https://github.com/haris-afaq/Ecommerce-App',
     ),
     Project(
-      title: 'Design System Kit',
+      title: 'Planty',
       description:
-          'Reusable component library with tokens, typography scale, and themed widgets to accelerate consistent UI delivery.',
-      tags: <String>['Design System', 'Tokens', 'Reusable UI'],
-      link: 'https://github.com/your-handle/design-system-kit',
+          'Created this application to detect diseases in plants, You can Upload any pic from Gallery or you can directly capture any picture with the phone camera',
+      tags: <String>['Flutter', 'GetX State Management', 'TensorFlow Lite'],
+      link: 'https://github.com/haris-afaq/Planty',
+    ),
+    Project(
+      title: 'Users App',
+      description:
+          'A user-friendly food delivery app for seamless restaurant browsing, easy ordering, and live order tracking.',
+      tags: <String>['Flutter', 'Firebase', 'Food Delivery App'],
+      link: 'https://github.com/haris-afaq/Users-App',
+    ),
+     Project(
+      title: 'Sellers App',
+      description:
+          'A seller app that allows users to list and manage homemade or restaurant food for sale, track orders, and connect with customers seamlessly.',
+      tags: <String>['Flutter', 'Firebase', 'Food Delivery App'],
+      link: 'https://github.com/haris-afaq/Sellers-App',
+    ),
+      Project(
+      title: 'Riders App',
+      description:
+          'A rider app that enables delivery partners to receive, manage, and complete orders efficiently in real time.',
+      tags: <String>['Flutter', 'Firebase', 'Food Delivery App'],
+      link: 'https://github.com/haris-afaq/Rider-App',
+    ),
+     Project(
+      title: 'COVID App',
+      description:
+          'A COVID detection app built to practice API integration, developed by following Asif Taj’s tutorials for hands-on learning.',
+      tags: <String>['Flutter', 'APIs Integration', 'Asif Taj'],
+      link: 'https://github.com/haris-afaq/Covid-App',
+    ),
+     Project(
+      title: 'Bloc State Management',
+      description:
+          'A Flutter project to practice Bloc and reactive state management, exploring patterns, events, states, and dynamic UI updates.',
+      tags: <String>['Flutter', 'Bloc State Management', 'Clean Coding'],
+      link: 'https://github.com/haris-afaq/Bloc_State_Management_Practice',
+    ),
+     Project(
+      title: 'Flutter_Clean_Architecture',
+      description:
+          'A Flutter template implementing Clean Architecture with BLoC, providing a scalable, maintainable, and testable project structure.',
+      tags: <String>['Flutter', 'Bloc State Management', 'Clean Coding', 'Bloc Patterns'],
+      link: 'https://github.com/haris-afaq/Flutter_Clean_Architecture',
     ),
   ];
 
   static const caseStudies = <CaseStudy>[
     CaseStudy(
-      title: 'Onboarding Redesign',
-      problem: 'High drop-off during onboarding on mobile.',
+      title: 'Learnify Mobile App Design',
+      problem: 'Many learning apps struggle with scalability, maintainability, and providing a seamless user experience, leading to slow performance and inconsistent interfaces.',
       solution:
-          'Simplified steps, reduced cognitive load, and introduced progressive disclosure with clearer copy.',
-      outcome: 'Improved completion rate and reduced time-to-first-action.',
-      link: 'https://dribbble.com/your-handle',
+          'Learnify was built using modern development practices with clean architecture, modular code structure, and a responsive UI to ensure a robust, maintainable, and scalable learning platform.',
+      outcome: 'The app delivers an efficient and engaging learning experience, with smooth performance, consistent design, and a codebase that is easy to extend and maintain over time.',
+      link: 'https://www.figma.com/proto/0vM2HSbrIy7KGh10lRoOC0/Learnify-Mobile-App?node-id=7-1809&p=f&t=08qRfSzt5OVOWspF-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A1809',
     ),
     CaseStudy(
-      title: 'Checkout UX Optimization',
-      problem: 'Users abandoned checkout due to unclear errors and friction.',
+      title: 'Jugarhi Chutu',
+      problem: 'Restaurants and food vendors often struggle to showcase their menu online and manage delivery orders efficiently, leading to delayed orders and poor user experience.',
       solution:
-          'Introduced inline validation, clearer hierarchy, and a calmer visual language.',
-      outcome: 'Lower abandonment and fewer support tickets.',
-      link: 'https://dribbble.com/your-handle',
+          'Designed a web app for Jugarhi Chutu that allows users to browse menus, place orders, and track deliveries seamlessly, with an intuitive and responsive UI for smooth interactions.',
+      outcome: 'The web app improves order management for vendors, provides a seamless browsing and ordering experience for customers, and enhances overall delivery efficiency and user satisfaction.',
+      link: 'https://www.figma.com/design/OSbugn3OIC0qBw4YFYfQkc/Jugari-Chutu?node-id=0-1&t=DYBV40SHxCaIeOvH-1',
+    ),
+     CaseStudy(
+      title: 'Shoporia',
+      problem: 'Small businesses and sellers often lack a streamlined platform to showcase products and reach customers, while users face difficulty discovering and ordering items easily.',
+      solution:
+          'Shoporia is a mobile ecommerce app that allows sellers to list products and manage orders, while providing users with an intuitive interface to browse, search, and track products seamlessly.',
+      outcome: 'The app connects sellers and buyers efficiently, enhances product discoverability, simplifies ordering, and delivers a smooth, user-friendly shopping experience.',
+      link: 'https://www.figma.com/design/HbsPuNi2MrAzLos1Ol4hEQ/Commerce-App-Designed-for-Portfolio?node-id=0-1&t=DYBV40SHxCaIeOvH-1',
+    ),
+     CaseStudy(
+      title: 'Music App',
+      problem: 'Users often struggle with cluttered music apps that make discovering, playing, and organizing songs inefficient and frustrating.',
+      solution:
+          'Designed a music app with a clean, intuitive interface that allows users to browse, search, and play songs easily, while offering organized playlists and smooth navigation.',
+      outcome: 'The app provides an engaging and seamless listening experience, helping users discover music effortlessly and manage their playlists with ease.',
+      link: 'https://www.figma.com/design/DmTcdvSmC5D5heiQLThcdl/music-app?node-id=65-2249&t=DYBV40SHxCaIeOvH-1',
     ),
   ];
 
   static const experience = <ExperienceItem>[
     ExperienceItem(
-      company: 'Company Name',
-      role: 'Flutter Developer',
-      period: '2024 — Present',
+      company: 'Inara Technologies',
+      role: 'Flutter Developer & UI/UX Designer',
+      period: 'May 2024 — Present',
       highlights: <String>[
-        'Shipped responsive Flutter Web experiences with a component-driven approach.',
-        'Built reusable UI patterns and improved performance through targeted optimizations.',
-        'Collaborated with design and product to align scope with measurable outcomes.',
+        'Led the end-to-end design and development of multiple Flutter applications from concept to deployment,integrating RESTful APIs for dynamic data handling.',
+        'Implemented Bloc, Provider and GetX for state management and established a clean architecture pattern,improving code maintainability and reducing post-launch issues.',
+        'Collaborated closely with backend engineers and product managers in an agile environment, contributing to the successful early launch of key projects.',
+        'Designed intuitive and responsive user interfaces for web and mobile applications, ensuring seamless user experiences aligned with client goals.',
+        'Conducted user research, & usability testing to inform design decisions and improve user engagement.',
+        'Created wireframes, prototypes, and design systems using Figma and Adobe XD for consistent and scalable design workflows.',
+        'Delivered pixel-perfect UI assets and maintained cross-platform design consistency across Android, iOS, and web platforms.',
       ],
     ),
     ExperienceItem(
-      company: 'Studio / Freelance',
-      role: 'UI/UX Designer',
-      period: '2022 — 2024',
+      company: 'Radiant Spark',
+      role: 'UI/UX Designer (Part Time)',
+      period: 'Feb 2024 – May 2024',
       highlights: <String>[
-        'Designed end-to-end flows from discovery to high-fidelity prototypes.',
-        'Established design tokens and handoff processes for consistent implementation.',
+        'Designed user-centered interfaces for web and mobile applications, focusing on improving usability and visual appeal.',
+        'Developed interactive prototypes and wireframes using Figma to communicate design concepts effectively.',
+        'Collaborated with cross-functional teams to align design strategies with business objectives and user needs.',
+        'Conducted user feedback sessions & implemented UI refinements to enhance overall user experience.',
+        'Ensured design consistency across platforms through reusable components and style guides.',
       ],
     ),
   ];

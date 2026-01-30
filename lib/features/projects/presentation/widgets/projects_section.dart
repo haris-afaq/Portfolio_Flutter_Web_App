@@ -1,4 +1,3 @@
-// import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ class ProjectsSection extends StatelessWidget {
 
     return SectionShell(
       sectionKey: sectionKey,
-      title: 'Projects',
+      title: 'Flutter Projects',
       subtitle:
           'A selection of Flutter builds with strong structure, UX polish, and pragmatic delivery.',
       background: theme.colorScheme.surface,

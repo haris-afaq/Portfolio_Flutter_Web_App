@@ -64,17 +64,17 @@ class _AboutCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.md),
           _ValueLine(
             title: 'Craft',
-            body: 'Interfaces should feel simple, calm, and intentional.',
+            body: 'Interfaces should feel simple, calm, and intentional, with every element thoughtfully placed to improve clarity, support usability, and maintain focus, creating a seamless and intuitive user experience.',
           ),
           _ValueLine(
             title: 'Clarity',
             body:
-                'Readable architecture that stays healthy as the product grows.',
+                'I build readable, modular architecture that evolves with the product, maintaining clarity, reducing technical debt, and making ongoing development efficient and sustainable.',
           ),
           _ValueLine(
             title: 'Impact',
             body:
-                'Prioritize changes that move product metrics and user outcomes.',
+                'I prioritize changes that improve both product metrics and user satisfaction, delivering outcomes that matter while maintaining a balance between design vision and technical execution.',
           ),
           const SizedBox(height: AppSpacing.lg),
           Divider(color: theme.colorScheme.outlineVariant),
@@ -82,7 +82,7 @@ class _AboutCard extends StatelessWidget {
           Text('Currently', style: theme.textTheme.titleMedium),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Open to Flutter projects and UI/UX collaborations.',
+            'I welcome opportunities for Flutter development and UI/UX collaborations, contributing structured, design-first solutions that deliver impact.',
             style: theme.textTheme.bodyMedium?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),
@@ -108,26 +108,26 @@ class _SkillsCard extends StatelessWidget {
           Text('Skills', style: theme.textTheme.titleLarge),
           const SizedBox(height: AppSpacing.md),
           _SkillGroup(
-            title: 'Core',
+            title: 'Development',
             color: theme.colorScheme.primary,
             skills: skills
-                .where((s) => s.level == SkillLevel.core)
+                .where((s) => s.level == SkillLevel.flutter)
                 .toList(growable: false),
           ),
           const SizedBox(height: AppSpacing.lg),
           _SkillGroup(
-            title: 'Strong',
+            title: 'Designing',
             color: theme.colorScheme.tertiary,
             skills: skills
-                .where((s) => s.level == SkillLevel.strong)
+                .where((s) => s.level == SkillLevel.UIUX_Designing)
                 .toList(growable: false),
           ),
           const SizedBox(height: AppSpacing.lg),
           _SkillGroup(
-            title: 'Familiar',
+            title: 'Others',
             color: theme.colorScheme.secondary,
             skills: skills
-                .where((s) => s.level == SkillLevel.familiar)
+                .where((s) => s.level == SkillLevel.Others)
                 .toList(growable: false),
           ),
         ],

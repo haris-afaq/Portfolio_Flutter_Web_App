@@ -56,7 +56,7 @@ class _DesktopNav extends StatelessWidget {
       children: [
         Flexible(
           child: Text(
-            'Portfolio',
+            'Welcome to my Portfolio',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: theme.textTheme.titleLarge,
@@ -91,7 +91,7 @@ class _MobileNav extends StatelessWidget {
       children: [
         Flexible(
           child: Text(
-            'Portfolio',
+            'Welcome to my Portfolio',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: theme.textTheme.titleLarge,
