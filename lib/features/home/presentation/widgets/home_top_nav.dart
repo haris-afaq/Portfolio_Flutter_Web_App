@@ -17,24 +17,30 @@ class HomeTopNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final size = Responsive.deviceSizeForWidth(constraints.maxWidth);
-        return switch (size) {
-          DeviceSize.mobile => _MobileNav(
-              sections: sections,
-              onSectionTap: onSectionTap,
-            ),
-          DeviceSize.tablet || DeviceSize.desktop => _DesktopNav(
-              sections: sections,
-              onSectionTap: onSectionTap,
-            ),
-        };
-      },
+    return SafeArea(
+      bottom: false,
+      child: SizedBox(
+        height: kToolbarHeight,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final size = Responsive.deviceSizeForWidth(constraints.maxWidth);
+
+            return switch (size) {
+              DeviceSize.mobile => _MobileNav(
+                  sections: sections,
+                  onSectionTap: onSectionTap,
+                ),
+              DeviceSize.tablet || DeviceSize.desktop => _DesktopNav(
+                  sections: sections,
+                  onSectionTap: onSectionTap,
+                ),
+            };
+          },
+        ),
+      ),
     );
   }
 }
-
 class _DesktopNav extends StatelessWidget {
   const _DesktopNav({required this.sections, required this.onSectionTap});
 
@@ -44,22 +50,32 @@ class _DesktopNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Portfolio', style: theme.textTheme.titleLarge),
-        const Spacer(),
+        Flexible(
+          child: Text(
+            'Portfolio',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.titleLarge,
+          ),
+        ),
         Wrap(
           spacing: AppSpacing.md,
           children: [
             for (final s in sections)
-              _NavItem(label: s.label, onTap: () => onSectionTap(s)),
+              _NavItem(
+                label: s.label,
+                onTap: () => onSectionTap(s),
+              ),
           ],
         ),
       ],
     );
   }
 }
-
 class _MobileNav extends StatelessWidget {
   const _MobileNav({required this.sections, required this.onSectionTap});
 
@@ -69,15 +85,26 @@ class _MobileNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Portfolio', style: theme.textTheme.titleLarge),
-        const Spacer(),
+        Flexible(
+          child: Text(
+            'Portfolio',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.titleLarge,
+          ),
+        ),
         PopupMenuButton<HomeSection>(
           tooltip: 'Menu',
           itemBuilder: (context) => [
             for (final s in sections)
-              PopupMenuItem<HomeSection>(value: s, child: Text(s.label)),
+              PopupMenuItem<HomeSection>(
+                value: s,
+                child: Text(s.label),
+              ),
           ],
           onSelected: onSectionTap,
           icon: const Icon(Icons.menu_rounded),
@@ -86,7 +113,6 @@ class _MobileNav extends StatelessWidget {
     );
   }
 }
-
 class _NavItem extends StatefulWidget {
   const _NavItem({required this.label, required this.onTap});
 
@@ -128,7 +154,12 @@ class _NavItemState extends State<_NavItem> {
                 : Colors.transparent,
             borderRadius: AppRadii.button,
           ),
-          child: Text(widget.label, style: theme.textTheme.labelLarge),
+          child: Text(
+            widget.label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.labelLarge,
+          ),
         ),
       ),
     );
