@@ -175,9 +175,17 @@ sealed class PortfolioData {
       title: 'Flutter_Clean_Architecture',
       description:
           'A Flutter template using BLoC and Clean Architecture for scalable, maintainable, and testable apps.',
-      tags: <String>['Flutter', 'Bloc State Management', 'Clean Coding', 'Bloc Patterns'],
+      tags: <String>['Flutter', 'Bloc', 'Clean Coding', 'Bloc Patterns'],
       link: 'https://github.com/haris-afaq/Flutter_Clean_Architecture',
     ),
+   Project(
+  title: 'AgriSense',
+  description:
+      'AgriSense is a Flutter app using TensorFlow Lite to detect plant diseases, suggest treatments, guide soil & water testing, and locate nearby labs.',
+  tags: <String>['Flutter', 'Firebase', 'Bloc', 'TensorFlow Lite',],
+  link: 'https://github.com/haris-afaq/Agri_Sense_App',
+),
+
   ];
 
   static const caseStudies = <CaseStudy>[
@@ -213,6 +221,15 @@ sealed class PortfolioData {
       outcome: 'The app provides an engaging and seamless listening experience, helping users discover music effortlessly and manage their playlists with ease.',
       link: 'https://www.figma.com/design/DmTcdvSmC5D5heiQLThcdl/music-app?node-id=65-2249&t=DYBV40SHxCaIeOvH-1',
     ),
+  CaseStudy(
+  title: 'AgriSense',
+  problem: 'Farmers and gardeners often struggle to identify plant diseases accurately, access proper treatment methods, and find reliable resources for soil and water testing. This lack of guidance can lead to crop loss and inefficient farming practices.',
+  solution: 
+      'Developed AgriSense, a mobile app that detects plant diseases using image recognition, provides detailed information on symptoms, treatments, and preventive measures. The app also guides users through step-by-step soil and water testing procedures and suggests nearby government labs for professional testing.',
+  outcome: 'AgriSense empowers users to maintain healthier crops by enabling accurate disease detection, informed treatment decisions, and reliable soil and water testing guidance, improving overall agricultural productivity and sustainability.',
+  link: 'https://www.figma.com/proto/lZJ3COiK8TUkBUSGhp9Yjc/Agri-Sense-Pest-Destection-and-Qulaity-Testing-App-?node-id=13-2&p=f&t=9nZCzMkz53MjagZ7-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A92',
+),
+
   ];
 
   static const experience = <ExperienceItem>[

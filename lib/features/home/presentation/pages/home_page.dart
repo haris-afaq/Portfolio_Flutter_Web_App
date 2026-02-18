@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
+          
           Expanded(
             child: SingleChildScrollView(
               controller: _sections.scrollController,
