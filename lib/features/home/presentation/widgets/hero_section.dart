@@ -144,6 +144,7 @@ class _HeroContent extends StatelessWidget {
           children: [
             PrimaryButton(
               label: 'Email me',
+              labelColor: Colors.black,
               icon: Icons.mail_rounded,
               onPressed: () => ExternalLinks.openEmail(profile.email),
             ),

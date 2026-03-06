@@ -25,15 +25,13 @@ class ProjectsSection extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           final size = Responsive.deviceSizeForWidth(constraints.maxWidth);
-          
-          // Calculate cross axis count based on screen size
+    
           final crossAxisCount = switch (size) {
             DeviceSize.mobile => 1,
             DeviceSize.tablet => 2,
             DeviceSize.desktop => 3,
           };
 
-          // Use different layout approaches based on screen size
           if (size == DeviceSize.mobile) {
             return ListView.builder(
               shrinkWrap: true,
@@ -59,7 +57,7 @@ class ProjectsSection extends StatelessWidget {
                 crossAxisCount: crossAxisCount,
                 crossAxisSpacing: AppSpacing.lg,
                 mainAxisSpacing: AppSpacing.lg,
-                // Use fixed height for tablets and desktops
+            
                 mainAxisExtent: size == DeviceSize.tablet ? 300 : 320,
               ),
               itemBuilder: (context, index) {
@@ -102,7 +100,7 @@ class _ProjectCard extends StatelessWidget {
               Text(
                 project.title,
                 style: theme.textTheme.titleLarge?.copyWith(
-                  fontSize: isMobile ? 20 : 22,
+                  fontSize: isMobile ? 18 : 22,
                   fontWeight: FontWeight.w600,
                 ),
                 maxLines: 2,
@@ -110,7 +108,6 @@ class _ProjectCard extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.sm),
 
-              // Project Description
               Expanded(
                 flex: 2,
                 child: Text(
@@ -125,7 +122,6 @@ class _ProjectCard extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.sm),
 
-              // Project Tags
               Wrap(
                 spacing: AppSpacing.xs,
                 runSpacing: AppSpacing.xs,
@@ -155,7 +151,7 @@ class _ProjectCard extends StatelessWidget {
 
               const Spacer(),
 
-              // View Link
+              
               Container(
                 margin: const EdgeInsets.only(top: AppSpacing.sm),
                 child: Row(
